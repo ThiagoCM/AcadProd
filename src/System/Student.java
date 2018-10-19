@@ -13,7 +13,7 @@ public class Student extends Collaborator{
     
     private String type;
     
-    private int nprojects;
+    private int activeprojects;
     
     public void setType(String type){
         this.type = type;
@@ -24,10 +24,10 @@ public class Student extends Collaborator{
     }
     
     public void incrementProjects(){
-        this.nprojects++;
+        this.activeprojects++;
     }
     
     public int getNumberProjects(){
-        return this.nprojects;
+        return this.activeprojects;
     }
 }
