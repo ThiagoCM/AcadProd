@@ -14,6 +14,8 @@ import java.util.LinkedList;
  */
 public class Project {
     
+    // Atributes //
+    
     private String name;
     private Date begun;
     private Date ended;
@@ -23,14 +25,17 @@ public class Project {
     private String description;
     private Collaborator manager;
     private String status;
-    
+   
+    // Lists
     private LinkedList <Collaborator> participants;
     private LinkedList <Publication> publications;
     
+    // Methods //
+    // Constructor
     public Project(Professor professor){
         participants = new LinkedList <Collaborator>();
         publications = new LinkedList <Publication>();
-        status = "Em elaboração.";
+        status = "Em elaboração";
         participants.add(professor);
     }
     
@@ -43,19 +48,19 @@ public class Project {
     }
     
     public void setDateBegun(Date date){
-        begun = date;
+        this.begun = date;
     }
     
     public Date getDateBegun(){
-        return begun;
+        return this.begun;
     }
     
     public void setDateEnded(Date date){
-        ended = date;
+        this.ended = date;
     }
     
     public Date getDateEnded(){
-        return ended;
+        return this.ended;
     }
     
     public void setFinancier(String financier){

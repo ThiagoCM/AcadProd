@@ -11,10 +11,12 @@ package System;
  */
 public class Student extends Collaborator{
     
+    // Attributes //
     private String type;
     
     private int activeprojects;
     
+    // Methods //
     public void setType(String type){
         this.type = type;
     }

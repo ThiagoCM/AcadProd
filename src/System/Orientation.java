@@ -12,10 +12,14 @@ import java.util.LinkedList;
  * @author Thiago
  */
 public class Orientation {
+    
+    // Attributes //
     private String name;
     private Professor orientator;
     private LinkedList <Student> participants;
     
+    // Methods //
+    //Constructor
     public void Orientation(){
         participants = new LinkedList<Student>();
     }

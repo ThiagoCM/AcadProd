@@ -13,15 +13,17 @@ import java.util.LinkedList;
  */
 public class Collaborator {
     
+    // Attributes //
     private String name;
-    
     private String email;
-        
+    
+    //Lists
     protected LinkedList <Publication> publications;
-    
     protected LinkedList <Project> projects;
-    
     protected LinkedList <Orientation> orientations;
+    
+    // Methods //
+    //Constructor
     public Collaborator(){
         publications = new LinkedList <Publication>();
         projects = new LinkedList <Project>();
