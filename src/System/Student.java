@@ -12,16 +12,16 @@ package System;
 public class Student extends Collaborator{
     
     // Attributes //
-    private String type;
+    private int type;
     
     private int activeprojects;
     
     // Methods //
-    public void setType(String type){
+    public void setType(int type){
         this.type = type;
     }
     
-    public String getType(){
+    public int getType(){
         return this.type;
     }
     
