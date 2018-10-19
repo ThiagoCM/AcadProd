@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package System;
+package academic.system;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -17,14 +18,14 @@ public class Project {
     // Atributes //
     
     private String name;
-    private Date begun;
-    private Date ended;
+    private int b_day, b_month, b_year;
+    private int e_day, e_month, e_year;
     private String financier;
     private Float value;
     private String objective;
     private String description;
     private Collaborator manager;
-    private String status;
+    private int status;
    
     // Lists
     private LinkedList <Collaborator> participants;
@@ -35,7 +36,7 @@ public class Project {
     public Project(Professor professor){
         participants = new LinkedList <Collaborator>();
         publications = new LinkedList <Publication>();
-        status = "Em elaboração";
+        status = 1;
         participants.add(professor);
     }
     
@@ -47,20 +48,40 @@ public class Project {
         return this.name;
     }
     
-    public void setDateBegun(Date date){
-        this.begun = date;
+    public void setDateBegun(int day, int month, int year){
+        this.b_day = day;
+        this.b_month = month;
+        this.b_year = year;
     }
     
-    public Date getDateBegun(){
-        return this.begun;
+    public int getDateBegunDay(){
+        return this.b_day;
     }
     
-    public void setDateEnded(Date date){
-        this.ended = date;
+    public int getDateBegunMonth(){
+        return this.b_month;
+    }
+        
+    public int getDateBegunYear(){
+        return this.b_year;
     }
     
-    public Date getDateEnded(){
-        return this.ended;
+    public void setDateEnded(int day, int month, int year){
+        this.e_day = day;
+        this.e_month = month;
+        this.e_year = year;
+    }
+    
+    public int getDateEndedDay(){
+        return this.e_day;
+    }
+    
+    public int getDateEndedMonth(){
+        return this.e_month;
+    }
+        
+    public int getDateEndedYear(){
+        return this.e_year;
     }
     
     public void setFinancier(String financier){
@@ -103,11 +124,11 @@ public class Project {
         return manager.getName();
     }
     
-    public void setStatus(String status){
+    public void setStatus(int status){
         this.status = status;
     }
     
-    public String getStatus(){
+    public int getStatus(){
         return this.status;
     }
     

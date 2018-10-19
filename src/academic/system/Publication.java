@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package System;
+package academic.system;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -16,7 +16,7 @@ public class Publication {
     
     // Attributes //
     private String name;
-    private Date date;
+    private int day, month, year;
     private String researchproject;
     private String conference;
     
@@ -37,12 +37,22 @@ public class Publication {
         return this.name;
     }
     
-    public void setDate(Date date){
-        this.date = date;
+    public void setDate(int day, int month, int year){
+        this.day = day;
+        this.month = month;
+        this.year = year;
     }
     
-    public Date getDate(){
-        return this.date;
+    public int getDateDay(){
+        return this.day;
+    }
+    
+    public int getDateMonth(){
+        return this.month;
+    }
+        
+    public int getDateYear(){
+        return this.year;
     }
     
     public void setResearchProject(String researchproject){
