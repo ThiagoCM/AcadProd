@@ -14,7 +14,7 @@ public class Student extends Collaborator{
     // Attributes //
     private int type;
     
-    private int activeprojects;
+    private int activeprojects = 0;
     
     // Methods //
     public void setType(int type){

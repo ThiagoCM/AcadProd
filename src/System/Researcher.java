@@ -9,6 +9,6 @@ package System;
  *
  * @author Thiago
  */
-public class Researcher {
+public class Researcher extends Collaborator {
     
 }
