@@ -5,12 +5,26 @@
  */
 package academic.system;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author Thiago
  */
 public class Professor extends Collaborator {
+    private LinkedList <Collaborator> oriented;
     
+    public Professor(){
+        oriented = new LinkedList<Collaborator>();
+    }
+    
+    public LinkedList <Collaborator> getOrientateds(){
+        return oriented;
+    }
+    
+    public void setOrientated(Collaborator student){
+        oriented.add(student);
+    }
     
     
 }

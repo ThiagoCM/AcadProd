@@ -12,11 +12,11 @@ import java.util.LinkedList;
  *
  * @author Thiago
  */
-public class Publication {
+public class Publication{
     
     // Attributes //
     private String name;
-    private int day, month, year;
+    private int year;
     private String researchproject;
     private String conference;
     
@@ -37,21 +37,11 @@ public class Publication {
         return this.name;
     }
     
-    public void setDate(int day, int month, int year){
-        this.day = day;
-        this.month = month;
+    public void setYear(int year){
         this.year = year;
     }
-    
-    public int getDateDay(){
-        return this.day;
-    }
-    
-    public int getDateMonth(){
-        return this.month;
-    }
         
-    public int getDateYear(){
+    public int getYear(){
         return this.year;
     }
     
@@ -82,4 +72,5 @@ public class Publication {
     public String toString(){
         return "TODO";
     }
+
 }

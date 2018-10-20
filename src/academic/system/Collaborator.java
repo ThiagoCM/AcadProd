@@ -6,6 +6,7 @@
 package academic.system;
 
 import java.util.LinkedList;
+import java.util.LinkedList;
 
 /**
  *

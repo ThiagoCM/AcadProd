@@ -5,8 +5,6 @@
  */
 package academic.system;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.LinkedList;
 
 /**
@@ -21,7 +19,7 @@ public class Project {
     private int b_day, b_month, b_year;
     private int e_day, e_month, e_year;
     private String financier;
-    private Float value;
+    private Double value;
     private String objective;
     private String description;
     private Collaborator manager;
@@ -33,11 +31,10 @@ public class Project {
     
     // Methods //
     // Constructor
-    public Project(Professor professor){
+    public Project(){
         participants = new LinkedList <Collaborator>();
         publications = new LinkedList <Publication>();
         status = 1;
-        participants.add(professor);
     }
     
     public void setName(String name){
@@ -72,10 +69,13 @@ public class Project {
         this.e_year = year;
     }
     
+    public int getDateEnded(){
+        return (this.e_day + (this.e_month*60) + (this.e_year*365));
+    }
+    
     public int getDateEndedDay(){
         return this.e_day;
     }
-    
     public int getDateEndedMonth(){
         return this.e_month;
     }
@@ -92,11 +92,11 @@ public class Project {
         return this.financier;
     }
     
-    public void setValue(Float value){
+    public void setValue(Double value){
         this.value = value;
     }
     
-    public Float getValue(){
+    public Double getValue(){
         return this.value;
     }
     
