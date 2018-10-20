@@ -133,7 +133,7 @@ public class Project {
     }
     
     public void addParticipant(Collaborator participant){
-        this.participants.add(participant);
+        participants.add(participant);
     }
     
     public LinkedList<Collaborator> getParticipants(){

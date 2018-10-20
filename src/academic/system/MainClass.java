@@ -76,11 +76,8 @@ public class MainClass {
         else if(collaborator instanceof Professor){
             System.out.println("- Occupation: Professor");
             System.out.println("- Orientation Projects: ");
-            for(Orientation o : collaborator.getOrientation()) {
-                System.out.println("Title: " + o.getName());
-                for(Student s : o.getParticipant()) {
-                    System.out.println("Student: " + s.getName());
-                }
+            for(Collaborator c : ((Professor) collaborator).getOrientateds()) {
+                System.out.println("Student: " + c.getName());
             }
         }
         else if(collaborator instanceof Researcher) {
@@ -88,10 +85,9 @@ public class MainClass {
         }
         
         System.out.println("- Projects: ");
-        sortProject(collaborator.getProject());
-        //for(Project p : collaborator.getProject()) {
-         //   System.out.println("" + p.getName());
-        //}
+        for(Project p : collaborator.getProject()){
+            System.out.println("" + p.getDateBegunDay() + "/" + p.getDateBegunMonth() + "/" + p.getDateBegunYear() + " - " + p.getName());
+        }
         
         System.out.println("- Publications: ");
         sortPublication(collaborator.getPublication());
@@ -253,10 +249,10 @@ public class MainClass {
                 
                 if(project.getStatus() == 2) {
                     project.addPublication(publication);
+                    System.out.println("Your publication has been added.");
                 } else System.out.println("This project is not in progress!");
             }
             
-            System.out.println("Your publication has been added.");
             
         }catch(InputMismatchException e){
             System.out.println("This command is invalid! Please insert one of the correct characters (1, 2).");        
@@ -288,12 +284,12 @@ public class MainClass {
         
         Project project = new Project();
         String option;
-        int day, month, year;
-        int id;
+
         System.out.println("--- ADDING NEW PROJECT ---");
         
         try{
-            
+            int day, month, year;
+            int id;
             System.out.println("Project Name: ");
             project.setName(input.nextLine());
             
@@ -340,6 +336,7 @@ public class MainClass {
             Collaborator participant = _participantlist.get(id);
             
             project.addParticipant(participant);
+            participant.addProject(project);
             
             System.out.println("The participant has been added.");
             System.out.println("The project" + project.getName() + "has been created.");
@@ -398,36 +395,6 @@ public class MainClass {
                 }
         }
     }      
-    
-    public static void sortProject(LinkedList <Project> _projectList){
-		int[] _projectAux = new int[_projectList.size()];
-		int i = 0, j = 0;
-		int aux;
-                
-                
-		for(Project project : _projectList){
-			_projectAux[i] = project.getDateEnded();
-			i++;
-		}
-
-                for(i = 0; i < _projectList.size(); i++){
-			for(j = i+1; j < _projectList.size(); j++){
-				if(_projectAux[i] < _projectAux[j]){
-					aux = _projectAux[i];
-					_projectAux[i] = _projectAux[j];
-					_projectAux[j] = aux;
-				}
-			}
-		}
-		
-		for(i = 0; i < _projectList.size(); i++){
-			for(Project project : _projectList){
-				if(_projectAux[i] == project.getDateEnded()){
-					System.out.println("Date: " + _projectAux[i] + " - " + project.getName());
-				}
-			}
-		}
-	}
     
     public static void printParticipants(LinkedList <Collaborator> _collaboratorList){
         for(Collaborator c : _collaboratorList){
@@ -507,7 +474,6 @@ public class MainClass {
 
                                 id = input.nextInt();
 
-                                System.out.println(_projectList.get(id) + " has been choosen!");
                                 project = _projectList.get(id);
 
                                 if(project.getStatus() != 1){
